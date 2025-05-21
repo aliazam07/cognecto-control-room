@@ -13,7 +13,7 @@ export const fallbackData = [
             name: "Park Road",
             district_id: 101,
             cameras: [
-              { id: 1, name: "Cam 1", place_id: 1, hslUrl: "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8" },
+              { id: 1, name: "Cam 1", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
               { id: 2, name: "Cam 2", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
               { id: 3, name: "Cam 3", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
               { id: 4, name: "Cam 4", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
@@ -34,7 +34,7 @@ export const fallbackData = [
             name: "JP ROAD",
             district_id: 101,
             cameras: [
-              { id: 15, name: "Cam 1", place_id: 2, hslUrl: "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8" }
+              { id: 15, name: "Cam 1", place_id: 2, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" }
             ]
           }
         ]
@@ -49,7 +49,7 @@ export const fallbackData = [
             name: "Common Road",
             district_id: 101,
             cameras: [
-              { id: 16, name: "Cam 1", place_id: 2, hslUrl: "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8" },
+              { id: 16, name: "Cam 1", place_id: 2, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
               { id: 17, name: "Cam 2", place_id: 2, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
             ]
           },
@@ -142,7 +142,7 @@ export const fallbackData = [
             name: "Katra",
             district_id: 105,
             cameras: [
-              { id: 22, name: "Cam 22", place_id: 6, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
+              { id: 22, name: "Cam 22", place_id: 6, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" }
             ]
           }
         ]

@@ -45,8 +45,8 @@ const SnapshotButton = ({ videoRef }) => {
               bgcolor: "rgba(0, 0, 0, 0.6)",
               color: "#fff",
               borderRadius: "50%",
-              width: 40,
-              height: 40,
+              width: {xs: 32,sm: 16,md: 8,},
+              height: {xs: 32,sm: 16,md: 8,},
               backdropFilter: "blur(4px)",
               boxShadow: 3,
               transition: "all 0.3s ease-in-out",
@@ -56,7 +56,7 @@ const SnapshotButton = ({ videoRef }) => {
               },
             }}
           >
-            <CameraAltIcon fontSize="small" />
+            <CameraAltIcon sx={{ fontSize: { xs: 16, sm: 12, md: 8 } }} />
           </IconButton>
         </Tooltip>
       </Box>
