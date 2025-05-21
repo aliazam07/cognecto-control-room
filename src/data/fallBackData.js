@@ -13,7 +13,7 @@ export const fallbackData = [
             name: "Park Road",
             district_id: 101,
             cameras: [
-              { id: 1, name: "Cam 1", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
+              { id: 1, name: "Cam 1", place_id: 1, hslUrl: "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8" },
               { id: 2, name: "Cam 2", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
               { id: 3, name: "Cam 3", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
               { id: 4, name: "Cam 4", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
@@ -34,7 +34,7 @@ export const fallbackData = [
             name: "JP ROAD",
             district_id: 101,
             cameras: [
-              { id: 15, name: "Cam 15", place_id: 2, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" }
+              { id: 15, name: "Cam 1", place_id: 2, hslUrl: "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8" }
             ]
           }
         ]
@@ -49,8 +49,8 @@ export const fallbackData = [
             name: "Common Road",
             district_id: 101,
             cameras: [
-              { id: 16, name: "Cam 16", place_id: 2, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" },
-              { id: 17, name: "Cam 17", place_id: 2, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
+              { id: 16, name: "Cam 1", place_id: 2, hslUrl: "https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8" },
+              { id: 17, name: "Cam 2", place_id: 2, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
             ]
           },
           {
@@ -58,7 +58,7 @@ export const fallbackData = [
             name: "JP ROAD",
             district_id: 101,
             cameras: [
-              { id: 18, name: "Cam 18", place_id: 3, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
+              { id: 18, name: "Cam 1", place_id: 3, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
             ]
           }
         ]
@@ -79,7 +79,7 @@ export const fallbackData = [
             name: "Central Park",
             district_id: 102,
             cameras: [
-              { id: 19, name: "Cam 19", place_id: 3, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
+              { id: 19, name: "Cam 1", place_id: 3, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
             ]
           }
         ]

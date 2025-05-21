@@ -6,7 +6,6 @@ import {
   AppBar,
   Toolbar,
   Typography,
-//   Divider,
   List,
   ListItem,
   ListItemButton,
@@ -19,10 +18,14 @@ import {
   Tooltip,
   Fade,
   useTheme,
+  useMediaQuery,
+  Divider,
 //   TextField,
 //   InputAdornment,
 //   Button, ButtonGroup
 } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
 import WindowOutlinedIcon from '@mui/icons-material/WindowOutlined'; // 2-col
@@ -75,6 +78,14 @@ function Main() {
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [columnCount, setColumnCount] = useState(3);
 
+  const [open, setOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const handleDrawerToggle = () => {
+    setOpen(!open);
+  };
+
   const hoverColor = darkMode
     ? "rgba(255,255,255,0.08)"
     : "rgba(63, 81, 181, 0.08)";
@@ -82,7 +93,6 @@ function Main() {
     ? "rgba(255,255,255,0.1)"
     : "rgba(63, 81, 181, 0.1)";
 
-  const theme = useTheme();
 
   // useEffect(() => {
   //   const timer = setTimeout(() => {
@@ -176,137 +186,151 @@ function Main() {
   };
 
   return (
-      <Box sx={{ display: "flex", minHeight: "100vh" }}>
-        <CssBaseline />
-        <AppBar
-          position="fixed"
+  <>
+  <CssBaseline />
+  <AppBar
+    position="fixed"
+    sx={{
+      width: '100%',
+      bgcolor: "#F9FAFB",
+      transition: "background-color 0.3s ease",
+      boxShadow: "none",
+      zIndex: (theme) => theme.zIndex.drawer + 1, // Ensure AppBar is above Drawer
+      
+      
+    }}
+  >
+    <Toolbar 
+      sx={{
+       display: "flex", 
+       justifyContent: "space-between" ,
+       height: {
+        xs: '56px',
+        sm: '64px',
+        md: '72px',
+      },
+      }}
+    >
+      {/* Left Section: Logo */}
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1 , width:{md: '235px',   // >=900px
+          lg: '275px',   // >=1200px (Full HD)
+          xl: '315px'},}}>
+        <CameraAltOutlinedIcon
           sx={{
-            width: `calc(100% - ${drawerWidth}px)`,
-            ml: `${drawerWidth}px`,
-            bgcolor: darkMode ? "#1a1a2e" : "#F9FAFB",
-            transition: "background-color 0.3s ease",
-            boxShadow:"none"
+            color: darkMode ? "#ffffff" : "#1F60C0",
+            fontSize: "1.5rem",
           }}
-          elevation={3}
-        >
-          <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Box sx={{ display: "flex", alignItems: "center", width:"40%" }}>
-              
-              <Box 
-                 sx={{
-                 marginRight:"3%"
-                 }}
-              >
-                <svg width="32" height="32" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M31.7001 6.30659C31.4855 6.22314 31.247 6.22314 31.0205 6.30659L8.4276 14.8788L31.3663 23.8921L54.3049 14.8788L31.7001 6.30659ZM6.56771 45.3166C6.56771 45.7101 6.81808 46.0677 7.18768 46.2108L28.5049 54.2942V28.9233L6.56771 20.3035V45.3166ZM34.2276 54.2942L55.5448 46.2108C55.9144 46.0677 56.1648 45.7101 56.1648 45.3166V20.3035L34.2276 28.9233V54.2942ZM28.9937 0.965369C30.5198 0.381173 32.2008 0.381173 33.7269 0.965369L57.5716 10.0145C60.1707 10.9921 61.8875 13.4719 61.8875 16.2499V45.3166C61.8875 48.0945 60.1707 50.5744 57.5836 51.5639L33.7388 60.613C32.2127 61.1972 30.5317 61.1972 29.0056 60.613L5.16087 51.5639C2.56179 50.5744 0.844971 48.0945 0.844971 45.3166V16.2499C0.844971 13.4719 2.56179 10.9921 5.14895 10.0025L28.9937 0.953447V0.965369Z" fill="#696969"/>
-                </svg>
-              </Box>
-
-              <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ fontWeight: "bold", color:"#696969", fontSize:"1.5rem" }}
-              >
-                Live Streaming
-              </Typography>
-            </Box>
-            <Box sx={{ display: "flex",alignItems: "center", width:"40%", justifyContent:"right" }}>
-            <Typography
-                variant="h6"
-                noWrap
-                component="div"
-                sx={{ fontWeight: "bold", color:"#696969", fontSize:"1rem", display:"flex", alignItems:"center" }}
-              >
-                Grid :
-              </Typography>
-            <Tooltip>
-              <Tooltip title="2 Columns">
-                <IconButton onClick={() => setColumnCount(2)} sx={iconStyle(columnCount === 2)}>
-                  <WindowOutlinedIcon />
-                </IconButton>
-              </Tooltip>
-        
-              <Tooltip title="3 Columns">
-                <IconButton onClick={() => setColumnCount(3)} sx={iconStyle(columnCount === 3)}>
-                  <GridOnOutlinedIcon />
-                </IconButton>
-              </Tooltip>
-        
-              <Tooltip title="4 Columns">
-                <IconButton onClick={() => setColumnCount(4)} sx={iconStyle(columnCount === 4)}>
-                  <GridViewIcon />
-                </IconButton>
-              </Tooltip>
-            </Tooltip>
-            </Box>
-            {/* <Tooltip
-              title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-            >
-              <IconButton color="inherit" onClick={toggleDarkMode}>
-                {darkMode ? <LightModeIcon /> : <DarkModeIcon />}
-              </IconButton>
-            </Tooltip> */}
-          </Toolbar>
-        </AppBar>
-
-        <Drawer
+        />
+        <Typography
           sx={{
-            width: drawerWidth,
-            flexShrink: 0,
-            "& .MuiDrawer-paper": {
-              width: drawerWidth,
-              boxSizing: "border-box",
-              overflowY: "scroll", // or "auto"
-              scrollbarWidth: "none", // for Firefox
-              "&::-webkit-scrollbar": {
-                display: "none", // for Chrome, Safari
-              },
-              backgroundImage: darkMode
-                ? "linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9))"
-                : "linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9))",
-              borderRight: `1px solid ${
-                darkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"
-              }`,
-            },
+            color: darkMode ? "#ffffff" : "#1F60C0",
+            fontWeight: "bold",
+            fontSize: "1.5rem",
           }}
-          variant="permanent"
-          anchor="left"
         >
-          <Toolbar
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: 1,
-              position:"sticky",
-              top:0,
-              zIndex:23456,
-              background:"#F9FAFB"
-            }}
+          Cognecto
+        </Typography>
+        
+        
+      </Box>
+      {!isMobile && (<Divider orientation="vertical" flexItem />)}
+      {!isMobile && (
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1, justifyContent:'space-between',flexGrow:1 }}>
+      {/* Center Section (Live Streaming) - Hidden on mobile */}
+      
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1,ml:2 }}>
+          <svg width="32" height="32" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M31.7001 6.30659C31.4855 6.22314 31.247 6.22314 31.0205 6.30659L8.4276 14.8788L31.3663 23.8921L54.3049 14.8788L31.7001 6.30659ZM6.56771 45.3166C6.56771 45.7101 6.81808 46.0677 7.18768 46.2108L28.5049 54.2942V28.9233L6.56771 20.3035V45.3166ZM34.2276 54.2942L55.5448 46.2108C55.9144 46.0677 56.1648 45.7101 56.1648 45.3166V20.3035L34.2276 28.9233V54.2942ZM28.9937 0.965369C30.5198 0.381173 32.2008 0.381173 33.7269 0.965369L57.5716 10.0145C60.1707 10.9921 61.8875 13.4719 61.8875 16.2499V45.3166C61.8875 48.0945 60.1707 50.5744 57.5836 51.5639L33.7388 60.613C32.2127 61.1972 30.5317 61.1972 29.0056 60.613L5.16087 51.5639C2.56179 50.5744 0.844971 48.0945 0.844971 45.3166V16.2499C0.844971 13.4719 2.56179 10.9921 5.14895 10.0025L28.9937 0.953447V0.965369Z" fill="#696969"/>
+          </svg>
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: "bold", color: "#696969", fontSize: "1.5rem" }}
           >
-            <CameraAltOutlinedIcon 
-               sx={{
-                color : darkMode
-                  ? "linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9))"
-                  : "#1F60C0",
-                  fontSize:"1.5rem",
-                  fontWeight:"bold"
-              }}
-            />
-            <Typography 
-              sx={{
-                variant:"h6",
-                color : darkMode
-                  ? "linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9))"
-                  : "#1F60C0",
-                fontWeight:"bold"
-                ,
-                fontSize:"1.5rem",
-              }}>
-              Cognecto
+            Live Streaming
+          </Typography>
+        </Box>
+      
+
+      {/* Right Section (Grid Switcher or Hamburger) */}
+      <Box sx={{ display: "flex", alignItems: "center" }}>
+        
+          <>
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: "bold", color: "#696969", fontSize: "1rem", mr: 1 }}
+            >
+              Grid:
             </Typography>
-          </Toolbar>
+            <Tooltip title="2 Columns">
+              <IconButton onClick={() => setColumnCount(2)} sx={iconStyle(columnCount === 2)}>
+                <WindowOutlinedIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="3 Columns">
+              <IconButton onClick={() => setColumnCount(3)} sx={iconStyle(columnCount === 3)}>
+                <GridOnOutlinedIcon />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title="4 Columns">
+              <IconButton onClick={() => setColumnCount(4)} sx={iconStyle(columnCount === 4)}>
+                <GridViewIcon />
+              </IconButton>
+            </Tooltip>
+          </>
+
+        
+      </Box>
+      </Box>
+      )}
+      {isMobile && (
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1, justifyContent:'space-between' }}>
+        <IconButton color="inherit" edge="start" onClick={handleDrawerToggle}>
+        {open ? <CloseRoundedIcon sx={{ color: '#1F60C0' }}  />:(
+          <MenuIcon sx={{ color: '#1F60C0' }} />
+        )}
+        </IconButton>
+      </Box>)}
+    </Toolbar>
+  </AppBar>
+
+  {/* Main layout area */}
+  <Box sx={{ display: "flex" }}>
+    <Drawer
+      variant={isMobile ? "temporary" : "permanent"}
+      open={isMobile ? open : true}
+      onClose={handleDrawerToggle}
+      sx={{
+        width: {md: '260px',
+          lg: '300px',   
+          xl: '340px',},
+        flexShrink: 0,
+        "& .MuiDrawer-paper": {
+          top: {
+              xs: '56px',
+              sm: '64px',
+              md: '72px',
+            },
+            height: {
+              xs: 'calc(100vh - 56px)',
+              sm: 'calc(100vh - 64px)',
+              md: 'calc(100vh - 72px)',
+            },
+          width:isMobile? `calc(100% - 100px)`: {md: '260px',   
+          lg: '300px',   
+          xl: '340px',},
+          boxSizing: "border-box",
+          overflowY: "scroll",
+          scrollbarWidth: "none",
+          "&::-webkit-scrollbar": { display: "none" },
+          zIndex: isMobile ? 1300 : "auto",
+          backgroundImage: darkMode
+            ? "linear-gradient(rgba(26, 26, 46, 0.9), rgba(26, 26, 46, 0.9))"
+            : "linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9))",
+          borderRight: `1px solid ${darkMode ? "rgba(255,255,255,0.1)" : "rgba(0,0,0,0.1)"}`,
+        },
+      }}
+    >
+          
 
           {/* <Divider /> */}
 
@@ -604,8 +628,25 @@ function Main() {
 
         <Box
           component="main"
-          sx={{ flexGrow: 1, p: 3, backgroundColor: "#FFF"}}
+          sx={{
+            flexGrow: 1,
+            p: 3,
+            mt: {
+              xs: '6px',
+              sm: '14px',
+              md: '22px',
+            },
+            height: {
+              xs: 'calc(100vh - 6px)',
+              sm: 'calc(100vh - 14px)',
+              md: 'calc(100vh - 22px)',
+            },
+            backgroundColor: "#FFF",
+            overflow: "auto"
+          }}
         >
+
+
           <Toolbar />
 
           {loading ? (
@@ -625,7 +666,8 @@ function Main() {
             </Box>
           ) : selectedPlace ? (
             <Fade in={!!selectedPlace} timeout={800}>
-              <Box>    
+              <Box>   
+               
                 {/* <Box            // Icon & Camera Name , Search Bar
                   sx={{
                     display: "flex",
@@ -679,7 +721,7 @@ function Main() {
               </Box>
             </Fade>
           ) : (
-            <Box
+            <Box 
             > 
              <CameraGrid
                 cameras={cameras}
@@ -694,6 +736,7 @@ function Main() {
         </Box>
         <CameraModal open={modalOpen} onClose={setModalOpen} selectedCamera={selectedCamera}/>
       </Box>
+      </>
   );
 }
 export default Main;

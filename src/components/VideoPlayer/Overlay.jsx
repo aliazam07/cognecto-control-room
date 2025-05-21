@@ -35,11 +35,25 @@ export const ErrorBox = () => (
     }}
   >
     <Box sx={{ textAlign: "center" }}>
-      <VideocamIcon sx={{ fontSize: 40, color: "error.main", mb: 1 }} />
-      <Typography>Error loading stream</Typography>
+      <VideocamIcon
+        sx={{
+          fontSize: { xs: 20, sm: 30 },  // smaller on xs, normal on sm+
+          color: "error.main",
+          mb: { xs: 0.3, sm: 0.4 },
+        }}
+      />
+      <Typography
+        sx={{
+          fontSize: { xs: '0.60rem', sm: '1rem' },  // smaller text on xs
+          fontWeight: 500,
+        }}
+      >
+        Error loading stream
+      </Typography>
     </Box>
   </Box>
 );
+
 
 const Overlay = ({ title, isCameraOnline }) => (
   <Box

@@ -58,18 +58,6 @@ const CameraCard = ({ camera, onCameraClick, theme }) => {
                   alignItems: 'center',
                 }}
               >
-                {/* <Typography
-                  variant="subtitle2"
-                  sx={{
-                    color: 'white',
-                    textShadow: '1px 1px 3px rgba(0,0,0,0.7)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 1,
-                  }}
-                >
-                  {camera.name}
-                </Typography> */}
               </Box>
 
               {isHovered && (
@@ -110,29 +98,34 @@ const CameraCard = ({ camera, onCameraClick, theme }) => {
           ) : (
             <Box
               sx={{
-              
-                height: '100%',
-                aspectRatio: '4 / 3',
-                width:"100%",
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                color: '#757575',
-                bgcolor:"fff"
-                // border:"1px solid blue"
+              height: '100%',
+              aspectRatio: '4 / 3',
+              width: "100%",
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              color: '#757575',
+              bgcolor: 'white',
+              px: 1,
+              textAlign: 'center',
+            }}
+          >
+            <CameraAltOutlinedIcon sx={{ fontSize: { xs: 20, sm: 30 }, mb: 0.5 }} />
+            <Typography
+              variant="subtitle2"
+              sx={{
+                fontSize: { xs: '0.65rem', sm: '0.85rem' },
+                maxWidth: '80%',
+                lineHeight: 1.2,
+                wordWrap: 'break-word',
+                fontWeight: 500,
               }}
             >
-              <CameraAltOutlinedIcon sx={{ fontSize: 48, mb: 1 }} />
-              <Typography variant="subtitle1"
-              sx={{
-                // margin:"-5px 30px",
-                // padding:"0px 5px",
-                // // border:"1px solid blue",
-                // width:'80%'
-              }}
-              >No Camera Selected</Typography>
-            </Box>
+              No Camera Selected
+            </Typography>
+          </Box>
+
           )}
         </Box>
 
@@ -151,11 +144,6 @@ const CameraCard = ({ camera, onCameraClick, theme }) => {
           <Typography variant="caption" sx={{ color: '#696969' , fontSize:'1rem'}}>
             {isCameraAvailable ? camera.name : 'Camera Name'}
           </Typography>
-          {/* {isCameraAvailable && (
-            <Tooltip title={`Pincode: ${camera.pincode}`} arrow>
-              <Typography variant="caption">{camera.pincode}</Typography>
-            </Tooltip>
-          )} */}
         </Box>
       </Paper>
     </motion.div>

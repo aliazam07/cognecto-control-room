@@ -1,4 +1,3 @@
-// components/VideoPlayer/index.jsx
 import React,{useState} from "react";
 import { Box } from "@mui/material";
 import HlsPlayer from "./HlsPlayer";
