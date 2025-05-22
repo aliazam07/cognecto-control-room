@@ -91,23 +91,23 @@ function Main() {
     : "rgba(63, 81, 181, 0.1)";
 
   const fetchCameras = (siteKey, packageKey, roadKey, assetKey) => {
-  console.log('Fetching cameras from:', siteKey, packageKey, roadKey, assetKey);
-
-  const cameras = data?.[siteKey]
-    ?.packages?.[packageKey]
-    ?.roads?.[roadKey]
-    ?.assets?.[assetKey]
-    ?.cameras;
-  console.log(cameras)
-  if (cameras && cameras.length > 0) {
-    setCameras(cameras);
-  } else {
-    console.warn('No cameras found for this asset, falling back');
-    setCameras([]); // Or fallback demo data if needed
-  }
-
-  setLoading(false);
-};
+    console.log('Fetching cameras from:', siteKey, packageKey, roadKey, assetKey);
+  
+    const cameras = data?.[siteKey]
+      ?.packages?.[packageKey]
+      ?.roads?.[roadKey]
+      ?.assets?.[assetKey]
+      ?.cameras;
+    console.log(cameras)
+    if (cameras && cameras.length > 0) {
+      setCameras(cameras);
+    } else {
+      console.warn('No cameras found for this asset, falling back');
+      setCameras([]);
+    }
+  
+    setLoading(false);
+  };
 
   
 //   const fetchCameras = async (asset_id) => {
@@ -150,66 +150,81 @@ useEffect(()=>{
     },
   });
 
-  const handleSiteClick = (cityId,site) => {
-    setSelectedCity(cityId);
-    setExpandedSite((prev) => (prev === cityId ? null : cityId));
-    setExpandedPackage(null);
-    setExpandedRoad(null);
-    setSelectedPlace(null);
-    setCameras([])
+  const handleSiteClick = (cityId, site) => {
+  setSelectedCity(cityId);
+  setExpandedSite((prev) => (prev === cityId ? null : cityId));
+  setExpandedPackage(null);
+  setExpandedRoad(null);
+  setSelectedPlace(null);
 
-    let count = 0;
-    const packages = site?.packages || {};
+  let cameraList = [];
+  const packages = site?.packages || {};
 
-    Object.values(packages).forEach(pkg => {
-      const roads = pkg?.roads || {};
-      Object.values(roads).forEach(road => {
-        const assets = road?.assets || {};
-        Object.values(assets).forEach(asset => {
-          const cameras = asset?.cameras || [];
-          count += cameras.length;
-        });
+  Object.values(packages).forEach(pkg => {
+    const roads = pkg?.roads || {};
+    Object.values(roads).forEach(road => {
+      const assets = road?.assets || {};
+      Object.values(assets).forEach(asset => {
+        const cameras = asset?.cameras || [];
+        cameraList.push(...cameras.map(cam => ({
+          camera_id: cam.camera_id,
+          camera_name: cam.camera_name
+        })));
       });
     });
-    setGridSize(count)
-  };
+  });
+
+  setCameras(cameraList);
+  setGridSize(cameraList.length);
+};
+
 
   const handlePackageClick = (districtId, packages) => {
-    setSelectedDistrict(districtId);
-    setExpandedPackage((prev) => (prev === districtId ? null : districtId));
-    setExpandedRoad(null);
-    setCameras([])
+  setSelectedDistrict(districtId);
+  setExpandedPackage((prev) => (prev === districtId ? null : districtId));
+  setExpandedRoad(null);
 
-    let count = 0;
-    const roads = packages?.roads || {};
+  let cameraList = [];
+  const roads = packages?.roads || {};
 
-    Object.values(roads).forEach(rod => {
-      const assets = rod?.assets || {};
-      Object.values(assets).forEach(ass => {
-        const cameras = ass?.cameras || [];
-          count += cameras.length;
-      });
+  Object.values(roads).forEach(road => {
+    const assets = road?.assets || {};
+    Object.values(assets).forEach(asset => {
+      const cameras = asset?.cameras || [];
+      cameraList.push(...cameras.map(cam => ({
+        camera_id: cam.camera_id,
+        camera_name: cam.camera_name
+      })));
     });
-    setGridSize(count)
-  };
+  });
 
-  const handleRoadClick = (placeId,roads) => {
-    const city = allData.find((city) => city.id === selectedCity);
-    const district = city?.districts.find((d) => d.id === selectedDistrict);
-    const place = district?.places.find((p) => p.id === placeId);
+  setCameras(cameraList);
+  setGridSize(cameraList.length);
+};
 
-    setExpandedRoad((prev) => (prev === placeId ? null : placeId));
-    setCameras([])
 
-    let count = 0;
-    const assets = roads?.assets || {};
+  const handleRoadClick = (placeId, roads) => {
+  const city = allData.find((city) => city.id === selectedCity);
+  const district = city?.districts.find((d) => d.id === selectedDistrict);
+  const place = district?.places.find((p) => p.id === placeId);
 
-    Object.values(assets).forEach(ass => {
-      const cameras = ass?.cameras || [];
-          count += cameras.length;
-    });
-    setGridSize(count)
-  };
+  setExpandedRoad((prev) => (prev === placeId ? null : placeId));
+
+  let cameraList = [];
+  const assets = roads?.assets || {};
+
+  Object.values(assets).forEach(asset => {
+    const cameras = asset?.cameras || [];
+    cameraList.push(...cameras.map(cam => ({
+      camera_id: cam.camera_id,
+      camera_name: cam.camera_name
+    })));
+  });
+
+  setCameras(cameraList);
+  setGridSize(cameraList.length);
+};
+
 
   const handlePlaceExpand = (CameraId) => {
     const city = allData.find((city) => city.id === selectedCity);
@@ -231,7 +246,7 @@ useEffect(()=>{
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-
+  console.log(cameras)
   return (
     <>
       <CssBaseline />

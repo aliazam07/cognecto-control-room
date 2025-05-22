@@ -51,7 +51,7 @@ export const ErrorBox = () => (
           fontWeight: 600,
         }}
       >
-        Error loading stream
+        No Feed Available
       </Typography>
     </Box>
   </Box>

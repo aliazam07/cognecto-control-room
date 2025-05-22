@@ -13,7 +13,7 @@ const HlsPlayer = ({ cameraId }) => {
   const [error, setError] = useState(false);
 
   const url = `http://18.220.202.145/hls/${cameraId}.m3u8`
-  console.log(url)
+  // console.log(url)
 
   const updateStatus = useCallback((status) => {
     setCameraOnlineStatus(cameraId, status);
