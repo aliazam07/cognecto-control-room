@@ -127,7 +127,7 @@ const CameraCard = ({ camera, onCameraClick, theme }) => {
         {/* Bottom dummy name area */}
         <Box
           sx={{
-            height: 36,
+            // height: 36,
             bgcolor: isCameraAvailable ? "white" : "white",
             color: isCameraAvailable ? "#696969" : "#424242",
             px: 2,
@@ -140,11 +140,13 @@ const CameraCard = ({ camera, onCameraClick, theme }) => {
             variant="caption"
             sx={{
               color: "#696969",
-              fontSize: "clamp(0.65rem, 1.2vw, 1rem)", // responsive scaling
-              whiteSpace: "nowrap",
+              fontSize: "clamp(0.65rem, 1.2vw, 1rem)",
+              whiteSpace: "wrap",
               textOverflow: "ellipsis",
-              overflow: "hidden",
+              overflowX: "auto",
+              fontWeight:500
             }}
+
           >
             {isCameraAvailable ? camera.camera_name : "Camera Name"}
           </Typography>
