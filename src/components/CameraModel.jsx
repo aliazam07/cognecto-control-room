@@ -56,9 +56,7 @@ const CameraModal = ({ open, onClose, selectedCamera }) => {
 
             {selectedCamera && (
               <VideoPlayer
-                hslUrl={selectedCamera.hslUrl}
-                title={selectedCamera.name}
-                cameraId = {selectedCamera.id}
+                cameraId = {selectedCamera.camera_id}
               />
             )}
           </motion.div>

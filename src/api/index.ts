@@ -1,54 +1,29 @@
-// src/api/index.ts
 import axios from 'axios';
-import {
-  fallbackData
-} from '../data/fallBackData';
 
 const API_BASE = 'https://your-backend-api.com';
 
-export const fetchData = async () => {
+// Fetch cameras via WebSocket
+export const fetchData = (socket: any, asset_id: number): Promise<any> => {
+  return new Promise((resolve) => {
+    socket.emit('get_cameras', { asset_id });
+
+
+    socket.once('camera_response', (data) => {
+      if (data) {
+        resolve(data);
+      }
+    });
+  });
+};
+
+// Fetch camera via REST API
+export const getCamera = async (asset_id: number): Promise<any> => {
   try {
-    const res = await axios.get(`${API_BASE}/get-data`);
+    const res = await axios.post(`${API_BASE}/get-camera`, { asset_id });
     return res.data;
-  } catch {
-    console.warn('API failed, using fallback cities');
-    return fallbackData;
+  } catch (error) {
+    console.warn('API failed:', error);
+    throw error; // ✅ THROW the error so fetchCameras enters catch block
   }
 };
 
-
-// export const getCameras = async (placeId: number) => {
-//   try {
-//     const res = await axios.post(`${API_BASE}/cameras`,placeId);
-//     return res.data;
-//   } catch {
-//     console.warn(`API failed, using fallback cameras for place ${placeId}`);
-//     return fallbackCameras.filter(camera => camera.placeId === placeId);
-//   }
-// };
-
-
-// Socket reference should be globally accessible or passed as a parameter
-// export const getCameras = (socket, placeId: number) => {
-//   return new Promise((resolve) => {
-//     socket.emit('get_cameras', { placeId });
-
-//     const timeout = setTimeout(() => {
-//       console.warn('Socket response timeout, using fallback data.');
-//       const fallback = fallbackCameras.filter(camera => camera.placeId === placeId);
-//       resolve(fallback);
-//     }, 2000); // fallback after 5s
-
-//     socket.once('camera_response', (data) => {
-//       clearTimeout(timeout);
-
-//       if (data && data.placeId === placeId) {
-//         resolve(data.cameras);
-//       } else {
-//         console.warn('Invalid or mismatched data, using fallback.');
-//         const fallback = fallbackCameras.filter(camera => camera.placeId === placeId);
-//         resolve(fallback);
-//       }
-//     });
-//   });
-// };

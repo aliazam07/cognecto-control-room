@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { Box, Typography, IconButton, Paper, Tooltip } from '@mui/material';
-// import FullscreenIcon from '@mui/icons-material/Fullscreen';
-// import CameraAltIcon from '@mui/icons-material/CameraAlt';
-import CameraAltOutlinedIcon from '@mui/icons-material/CameraAltOutlined';
-import { motion } from 'framer-motion';
-import VideoPlayer from '../components/VideoPlayer/index';
+import React, { useState } from "react";
+import { Box, Typography, IconButton, Paper, Tooltip } from "@mui/material";
+import CameraAltOutlinedIcon from "@mui/icons-material/CameraAltOutlined";
+import { motion } from "framer-motion";
+import VideoPlayer from "../components/VideoPlayer/index";
 
 const CameraCard = ({ camera, onCameraClick, theme }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -23,109 +21,106 @@ const CameraCard = ({ camera, onCameraClick, theme }) => {
         sx={{
           // aspectRatio: '16/9',
           height: "auto",
-          width: '100%',
-          cursor: isCameraAvailable ? 'pointer' : 'default',
+          width: "100%",
+          cursor: isCameraAvailable ? "pointer" : "default",
           borderRadius: "6px",
-          overflow: 'hidden',
-          border: isHovered && isCameraAvailable ? `1px solid ${theme.palette.primary.main}` : 'none',
-          backgroundColor: isCameraAvailable ? 'transparent' : '#fff',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          transition: 'all 0.3s ease',
-          border:"1px solid #C7C7C7",
-          boxShadow:"none"
+          overflow: "hidden",
+          border:
+            isHovered && isCameraAvailable
+              ? `1px solid ${theme.palette.primary.main}`
+              : "none",
+          backgroundColor: isCameraAvailable ? "transparent" : "#fff",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          transition: "all 0.3s ease",
+          border: "1px solid #C7C7C7",
+          boxShadow: "none",
         }}
         onClick={() => isCameraAvailable && onCameraClick(camera)}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Box sx={{ flex: 1, position: 'relative',aspectRatio: '16 / 9', borderBottom:"1px solid #C7C7C7" }}>
+        <Box
+          sx={{
+            flex: 1,
+            position: "relative",
+            aspectRatio: "16 / 9",
+            borderBottom: "1px solid #C7C7C7",
+          }}
+        >
           {isCameraAvailable ? (
             <>
-              <VideoPlayer hslUrl={camera.hslUrl} title={camera.name} cameraId = {camera.id} />
+              <VideoPlayer
+                cameraId={camera.camera_id}
+              />
 
               <Box
                 sx={{
-                  position: 'absolute',
+                  position: "absolute",
                   top: 0,
                   left: 0,
                   right: 0,
-                  padding: '8px 12px',
-                  background: 'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
+                  padding: "8px 12px",
+                  // background:
+                  //   "linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%)",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
                 }}
-              >
-              </Box>
+              ></Box>
 
               {isHovered && (
                 <Box
                   sx={{
-                    position: 'absolute',
+                    position: "absolute",
                     top: 0,
                     left: 0,
                     right: 0,
                     bottom: 0,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    bgcolor: 'rgba(0,0,0,0.3)',
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    bgcolor: "rgba(0,0,0,0.3)",
                     opacity: 1,
-                    transition: 'opacity 0.3s ease',
-                  }
-                  }
-                  
-                >
-                  {/* <IconButton
-                    sx={{
-                      bgcolor: theme.palette.primary.main,
-                      color: 'white',
-                      '&:hover': {
-                        bgcolor: theme.palette.primary.dark,
-                        transform: 'scale(1.1)',
-                      },
-                      transition: 'all 0.2s ease',
-                    }}
-                    onClick={() => onCameraClick(camera)}
-                  >
-                    <FullscreenIcon />
-                  </IconButton> */}
-                </Box>
+                    transition: "opacity 0.3s ease",
+                  }}
+                ></Box>
               )}
             </>
           ) : (
             <Box
               sx={{
-              height: '100%',
-              aspectRatio: '4 / 3',
-              width: "100%",
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: '#757575',
-              bgcolor: 'white',
-              px: 1,
-              textAlign: 'center',
-            }}
-          >
-            <CameraAltOutlinedIcon sx={{ fontSize: { xs: 20, sm: 30 }, mb: 0.5 }} />
-            <Typography
-              variant="subtitle2"
-              sx={{
-                fontSize: { xs: '0.65rem', sm: '0.85rem' },
-                maxWidth: '80%',
-                lineHeight: 1.2,
-                wordWrap: 'break-word',
-                fontWeight: 500,
+                height: "100%",
+                aspectRatio: "4 / 3",
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                color: "#757575",
+                bgcolor: "white",
+                px: 1,
+                textAlign: "center",
               }}
             >
-              No Camera Selected
-            </Typography>
-          </Box>
-
+              <CameraAltOutlinedIcon
+                sx={{ fontSize: { xs: 20, sm: 30 }, mb: 0.5 }}
+              />
+              <Typography
+                variant="subtitle2"
+                sx={{
+                  fontSize: { xs: "0.65rem", sm: "0.85rem" },
+                  fontSize: "clamp(0.65rem, 1.2vw, 1rem)",
+                  maxWidth: "80%",
+                  lineHeight: 1.2,
+                  wordWrap: "break-word",
+                  fontWeight: 500,
+                }}
+              >
+                No Camera Selected
+              </Typography>
+            </Box>
           )}
         </Box>
 
@@ -133,16 +128,25 @@ const CameraCard = ({ camera, onCameraClick, theme }) => {
         <Box
           sx={{
             height: 36,
-            bgcolor: isCameraAvailable ? 'white' : 'white',
-            color: isCameraAvailable ? '#696969' : '#424242',
+            bgcolor: isCameraAvailable ? "white" : "white",
+            color: isCameraAvailable ? "#696969" : "#424242",
             px: 2,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          <Typography variant="caption" sx={{ color: '#696969' , fontSize:'1rem'}}>
-            {isCameraAvailable ? camera.name : 'Camera Name'}
+          <Typography
+            variant="caption"
+            sx={{
+              color: "#696969",
+              fontSize: "clamp(0.65rem, 1.2vw, 1rem)", // responsive scaling
+              whiteSpace: "nowrap",
+              textOverflow: "ellipsis",
+              overflow: "hidden",
+            }}
+          >
+            {isCameraAvailable ? camera.camera_name : "Camera Name"}
           </Typography>
         </Box>
       </Paper>

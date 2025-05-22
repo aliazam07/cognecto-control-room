@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Typography, CircularProgress } from "@mui/material";
 import VideocamIcon from "@mui/icons-material/Videocam";
+import VideocamOffOutlinedIcon from '@mui/icons-material/VideocamOffOutlined';
 
 export const OverlayLoader = ({ text }) => (
   <Box
@@ -30,22 +31,23 @@ export const ErrorBox = () => (
       alignItems: "center",
       height: "100%",
       aspectRatio: '16 / 9',
-      color: "white",
-      bgcolor: "rgba(0,0,0,0.8)",
+      color: "#696969",
+      bgcolor: "#f5f5f5",
     }}
   >
     <Box sx={{ textAlign: "center" }}>
-      <VideocamIcon
+      <VideocamOffOutlinedIcon
         sx={{
-          fontSize: { xs: 20, sm: 30 },  // smaller on xs, normal on sm+
+          fontSize: { xs: 16, sm: 25 ,lg:50, xl:72},  // smaller on xs, normal on sm+
           color: "error.main",
           mb: { xs: 0.3, sm: 0.4 },
         }}
       />
       <Typography
         sx={{
-          fontSize: { xs: '0.60rem', sm: '1rem' },  // smaller text on xs
-          fontWeight: 500,
+          // fontSize: { xs: '0.60rem', sm: '1rem', },  // smaller text on xs
+          fontSize: "clamp(0.65rem, 1.2vw, 3rem)",
+          fontWeight: 600,
         }}
       >
         Error loading stream

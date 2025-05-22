@@ -14,19 +14,19 @@ const getStreamType = (url) => {
   return "unknown";
 };
 
-const VideoPlayer = ({ hslUrl, title , cameraId}) => {
-  const streamType = getStreamType(hslUrl);
+const VideoPlayer = ({  cameraId}) => {
+  // const streamType = getStreamType(hslUrl);
 
   return (
     <Box sx={{ position: "relative", height: "100%", bgcolor: "black" }}>
 
-      {streamType === "hls" && (
-        <HlsPlayer url={hslUrl} cameraId={cameraId}/>
-      )}
-      {streamType === "dash" && <DashPlayer url={hslUrl} cameraId={cameraId} />}
+      {/* {streamType === "hls" && ( */}
+        <HlsPlayer  cameraId={cameraId}/>
+      {/* )} */}
+      {/* {streamType === "dash" && <DashPlayer url={hslUrl} cameraId={cameraId} />}
       {streamType === "native" && <NativePlayer url={hslUrl} cameraId={cameraId}/>}
       {streamType === "webrtc" && <WebRTCPlayer url={hslUrl} cameraId={cameraId}/>}
-      {streamType === "unknown" && <div>Unsupported stream type</div>}
+      {streamType === "unknown" && <div>Unsupported stream type</div>} */}
     </Box>
   );
 };

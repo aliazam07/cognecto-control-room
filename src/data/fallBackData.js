@@ -1,257 +1,664 @@
-export const fallbackData = [
-  {
-    id: 1,
-    name: "SR NAGAR",
-    districts: [
-      {
-        id: 101,
-        name: "SR NAGAR",
-        city_id: 1,
-        places: [
-          {
-            id: 1,
-            name: "Park Road",
-            district_id: 101,
-            cameras: [
-              { id: 1, name: "Cam 1", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 2, name: "Cam 2", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 3, name: "Cam 3", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 4, name: "Cam 4", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 5, name: "Cam 5", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 6, name: "Cam 6", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 7, name: "Cam 7", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 8, name: "Cam 8", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 9, name: "Cam 9", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 10, name: "Cam 10", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 11, name: "Cam 11", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 12, name: "Cam 12", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 13, name: "Cam 13", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 14, name: "Cam 14", place_id: 1, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" }
-            ]
+export const data = 
+{
+  "222": {
+    "site_name": "Bhadohi (BDI)",
+    "packages": {
+      "UP6152": {
+        "package_name": "UP6152",
+        "roads": {
+          "685": {
+            "road_name": "T04-Gopiganj-Gyanpur Rd.to Garibi KaTara via BaidaKhas-Ghatampur-1",
+            "assets": {
+              "3400": {
+                "asset_name": "BDI-UP6154-2990-PAD-FOOT-ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3406": {
+                "asset_name": "BDI-UP6154-3126-PTR-2",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3407": {
+                "asset_name": "BDI-UP6160-2881-CEMENT-SPREADER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3408": {
+                "asset_name": "BDI-UP6160-7112-SOIL-COMPACTOR",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              }
+            }
           },
-          {
-            id: 2,
-            name: "JP ROAD",
-            district_id: 101,
-            cameras: [
-              { id: 15, name: "Cam 1", place_id: 2, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" }
-            ]
+          "687": {
+            "road_name": "BDI-UP6152-Gopiganj Gyanpur Rd.to Garibi KaTara via BaidaKhas-Ghatampur-1",
+            "assets": {
+              "3400": {
+                "asset_name": "BDI-UP6154-2990-PAD-FOOT-ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3406": {
+                "asset_name": "BDI-UP6154-3126-PTR-2",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3408": {
+                "asset_name": "BDI-UP6160-7112-SOIL-COMPACTOR",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              }
+            }
           }
-        ]
+        }
       },
-      {
-        id: 102,
-        name: "SR NAGAR",
-        city_id: 1,
-        places: [
-          {
-            id: 2,
-            name: "Common Road",
-            district_id: 101,
-            cameras: [
-              { id: 16, name: "Cam 1", place_id: 2, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" },
-              { id: 17, name: "Cam 2", place_id: 2, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
-            ]
-          },
-          {
-            id: 3,
-            name: "JP ROAD",
-            district_id: 101,
-            cameras: [
-              { id: 18, name: "Cam 1", place_id: 3, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
-            ]
+      "UP6157": {
+        "package_name": "UP6157",
+        "roads": {
+          "686": {
+            "road_name": "BDI-UP6157-Bhadohi Durgaganj Rd Vishwakarma Temple to Sanakdeeh-Nagua-1",
+            "assets": {
+              "3400": {
+                "asset_name": "BDI-UP6154-2990-PAD-FOOT-ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3404": {
+                "asset_name": "BDI-UP6154-2013-HAMM ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3405": {
+                "asset_name": "BDI-UP6154-WRT-RECLAIMER-2",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3406": {
+                "asset_name": "BDI-UP6154-3126-PTR-2",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3407": {
+                "asset_name": "BDI-UP6160-2881-CEMENT-SPREADER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3408": {
+                "asset_name": "BDI-UP6160-7112-SOIL-COMPACTOR",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3572": {
+                "asset_name": "BDI-UP6154-CHEMICAL-SPREADER-1",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              }
+            }
           }
-        ]
+        }
+      },
+      "UP6156": {
+        "package_name": "UP6156",
+        "roads": {
+          "689": {
+            "road_name": "BDI-UP6156-G.T.Rd 729 Km.st. to Kurmaicha Vishnathpur upto SuNagar Rohi-1",
+            "assets": {
+              "3406": {
+                "asset_name": "BDI-UP6154-3126-PTR-2",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "UP6160": {
+        "package_name": "UP6160",
+        "roads": {
+          "691": {
+            "road_name": "BDI_UP6160_Gyanpur Lalanagr Rd. to Akelwa via Bhidiura Shripur PMGSY-1",
+            "assets": {
+              "3406": {
+                "asset_name": "BDI-UP6154-3126-PTR-2",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3407": {
+                "asset_name": "BDI-UP6160-2881-CEMENT-SPREADER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3408": {
+                "asset_name": "BDI-UP6160-7112-SOIL-COMPACTOR",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3400": {
+                "asset_name": "BDI-UP6154-2990-PAD-FOOT-ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "UP6162": {
+        "package_name": "UP6162",
+        "roads": {
+          "692": {
+            "road_name": "BDI_UP6162_Kripalpur Bithauli Border to Basvapur Bhikhmapur upto SK.Rd-1",
+            "assets": {
+              "3409": {
+                "asset_name": "BDI-UP6154-CAT0468-MOTOR-GRADER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3572": {
+                "asset_name": "BDI-UP6154-CHEMICAL-SPREADER-1",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3405": {
+                "asset_name": "BDI-UP6154-WRT-RECLAIMER-2",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3574": {
+                "asset_name": "BDI-UP6154-UP71BT5437-CEMENT-SPREADER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "UP6154": {
+        "package_name": "UP6154",
+        "roads": {
+          "694": {
+            "road_name": "BDI_UP6154_Suriyawa BDH to Chakia Mangura Chaugana Road via Chhataripur-1",
+            "assets": {
+              "3400": {
+                "asset_name": "BDI-UP6154-2990-PAD-FOOT-ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3404": {
+                "asset_name": "BDI-UP6154-2013-HAMM ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3405": {
+                "asset_name": "BDI-UP6154-WRT-RECLAIMER-2",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3406": {
+                "asset_name": "BDI-UP6154-3126-PTR-2",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3407": {
+                "asset_name": "BDI-UP6160-2881-CEMENT-SPREADER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3408": {
+                "asset_name": "BDI-UP6160-7112-SOIL-COMPACTOR",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3409": {
+                "asset_name": "BDI-UP6154-CAT0468-MOTOR-GRADER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3572": {
+                "asset_name": "BDI-UP6154-CHEMICAL-SPREADER-1",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3574": {
+                "asset_name": "BDI-UP6154-UP71BT5437-CEMENT-SPREADER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              }
+            }
+          }
+        }
       }
-    ]
+    }
   },
-  {
-    id: 2,
-    name: "FATEHPUR",
-    districts: [
-      {
-        id: 102,
-        name: "Swaroop Nagar",
-        city_id: 2,
-        places: [
-          {
-            id: 3,
-            name: "Central Park",
-            district_id: 102,
-            cameras: [
-              { id: 19, name: "Cam 1", place_id: 3, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
-            ]
+  "230": {
+    "site_name": "Kanpur Dehat (KDT)",
+    "packages": {
+      "UP40111": {
+        "package_name": "UP40111",
+        "roads": {
+          "697": {
+            "road_name": "KDT-UP40111-Jhinjhak kanchausi Road km 1 to Aurangabad via Lagartha-1",
+            "assets": {
+              "3587": {
+                "asset_name": "KDT-UP40112-HAMM-ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "kdt-up40111-hamm",
+                    "camera_name": "kdt-up40111-hamm",
+                    "url": ""
+                  }
+                ]
+              },
+              "3576": {
+                "asset_name": "KDT-UP40112-PTR",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3586": {
+                "asset_name": "KDT-UP40112-PAD-FOOT-ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3589": {
+                "asset_name": "KDT-UP40112-2381-CEMENT-SPREADER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              }
+            }
           }
-        ]
+        }
+      },
+      "UP40112": {
+        "package_name": "UP40112",
+        "roads": {
+          "699": {
+            "road_name": "KDT-UP40112-Mangalpur to Kandauli Mandauli-1",
+            "assets": {
+              "3576": {
+                "asset_name": "KDT-UP40112-PTR",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3586": {
+                "asset_name": "KDT-UP40112-PAD-FOOT-ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3587": {
+                "asset_name": "KDT-UP40112-HAMM-ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3590": {
+                "asset_name": "KDT-UP40112-1324-CEMENT-SPREADER-2",
+                "cameras": [
+                  {
+                    "camera_id": "kdt-up40111-1324",
+                    "camera_name": "kdt-up40111-1324",
+                    "url": ""
+                  }
+                ]
+              },
+              "3628": {
+                "asset_name": "KDT-UP40112-WRT-RECLAIMER",
+                "cameras": [
+                  {
+                    "camera_id": "kdt-up40111-reclaimer",
+                    "camera_name": "kdt-up40111-reclaimer",
+                    "url": ""
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "UP4093": {
+        "package_name": "UP4093",
+        "roads": {
+          "701": {
+            "road_name": "KDT-UP4093-Bhaupur Rly Crossiong to Pakri Shivli Road via Bheekhar ,Naubasta-1",
+            "assets": {
+              "3578": {
+                "asset_name": "KDT-UP4093-PTR",
+                "cameras": [
+                  {
+                    "camera_id": "kdt-up4093-ptr",
+                    "camera_name": "kdt-up4093-ptr",
+                    "url": ""
+                  }
+                ]
+              },
+              "3628": {
+                "asset_name": "KDT-UP40112-WRT-RECLAIMER",
+                "cameras": [
+                  {
+                    "camera_id": "kdt-up4093-escort",
+                    "camera_name": "kdt-up4093-escort",
+                    "url": ""
+                  }
+                ]
+              },
+              "3629": {
+                "asset_name": "KDT- UP40110- UP 80 FT 2750- ESCORTS SC",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3627": {
+                "asset_name": "KDT-UP4093-PAD-FOOT-ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3590": {
+                "asset_name": "KDT-UP40112-1324-CEMENT-SPREADER-2",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3649": {
+                "asset_name": "KDT-UP4093-UP80FT9818-MOTOR-GRADER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3650": {
+                "asset_name": "KDT-UP40112-UP70LT5076-CEMENT-SPREADER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "UP40110": {
+        "package_name": "UP40110",
+        "roads": {
+          "704": {
+            "road_name": "KDT-UP40110-SJR Road Km 36 to Ratanpur Khas-1",
+            "assets": {
+              "3629": {
+                "asset_name": "KDT- UP40110- UP 80 FT 2750- ESCORTS SC",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              }
+            }
+          }
+        }
       }
-    ]
+    }
   },
-  {
-    id: 3,
-    name: "KANPUR",
-    districts: [
-      {
-        id: 103,
-        name: "Arya Nagar",
-        city_id: 3,
-        places: [
-          {
-            id: 4,
-            name: "Mall Road",
-            district_id: 103,
-            cameras: [
-              { id: 20, name: "Cam 20", place_id: 4, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
-            ]
+  "226": {
+    "site_name": "Deoria (DRA)",
+    "packages": {
+      "UP20144": {
+        "package_name": "UP20144",
+        "roads": {
+          "707": {
+            "road_name": "DRA-UP20144-MRL01-GAURI RUDRAPUR MARG INDUPUR TO RUDRAPUR VIA BANIYANI-1",
+            "assets": {
+              "3664": {
+                "asset_name": "DRA-UP20144-E00368-PAD-FOOT-ROLLER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3665": {
+                "asset_name": "DRA-UP20144-2671-SOIL-COMPACTOR",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3641": {
+                "asset_name": "DRA-UP20144-UP70MT7937-CEMENT-SPREADER",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              },
+              "3693": {
+                "asset_name": "DRA-UP20144-PTR",
+                "cameras": [
+                  {
+                    "camera_id": "",
+                    "camera_name": "",
+                    "url": ""
+                  }
+                ]
+              }
+            }
           }
-        ]
+        }
       }
-    ]
-  },
-  {
-    id: 4,
-    name: "LUCKNOW",
-    districts: [
-      {
-        id: 104,
-        name: "Hazratganj",
-        city_id: 4,
-        places: [
-          {
-            id: 5,
-            name: "Aminabad",
-            district_id: 104,
-            cameras: [
-              { id: 21, name: "Cam 21", place_id: 5, hslUrl: "http://18.220.202.145/hls/kdt-up4093-escort.m3u8" }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 5,
-    name: "ALLAHABAD",
-    districts: [
-      {
-        id: 105,
-        name: "Civil Lines",
-        city_id: 5,
-        places: [
-          {
-            id: 6,
-            name: "Katra",
-            district_id: 105,
-            cameras: [
-              { id: 22, name: "Cam 22", place_id: 6, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 6,
-    name: "GORAKHPUR",
-    districts: [
-      {
-        id: 106,
-        name: "Golghar",
-        city_id: 6,
-        places: [
-          {
-            id: 7,
-            name: "Medical Road",
-            district_id: 106,
-            cameras: [
-              { id: 23, name: "Cam 23", place_id: 7, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 7,
-    name: "VARANASI",
-    districts: [
-      {
-        id: 107,
-        name: "Bhelupur",
-        city_id: 7,
-        places: [
-          {
-            id: 8,
-            name: "Godowlia",
-            district_id: 107,
-            cameras: [
-              { id: 24, name: "Cam 24", place_id: 8, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 8,
-    name: "MEERUT",
-    districts: [
-      {
-        id: 108,
-        name: "Begum Bridge",
-        city_id: 8,
-        places: [
-          {
-            id: 9,
-            name: "Abulane",
-            district_id: 108,
-            cameras: [
-              { id: 25, name: "Cam 25", place_id: 9, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 9,
-    name: "AGRA",
-    districts: [
-      {
-        id: 109,
-        name: "Tajganj",
-        city_id: 9,
-        places: [
-          {
-            id: 10,
-            name: "Fatehabad Road",
-            district_id: 109,
-            cameras: [
-              { id: 26, name: "Cam 26", place_id: 10, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: 10,
-    name: "MATHURA",
-    districts: [
-      {
-        id: 110,
-        name: "Krishna Nagar",
-        city_id: 10,
-        places: [
-          {
-            id: 11,
-            name: "Vishram Ghat",
-            district_id: 110,
-            cameras: [
-              { id: 27, name: "Cam 27", place_id: 11, hslUrl: "http://18.220.202.145/hls/test-device-3.m3u8" }
-            ]
-          }
-        ]
-      }
-    ]
+    }
   }
-];
+}
+

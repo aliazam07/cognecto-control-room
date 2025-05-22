@@ -7,14 +7,15 @@ const CARD_ASPECT_RATIO = 9 / 16; // height / width for 16:9
 const CARD_GAP = 16; // px gap between cards (same as `gap={4}` = 32px = 2rem)
 
 const CameraGrid = ({ cameras = [], onCameraClick, theme, searchCamera = '', columns = 4 }) => {
-  const filteredCameras = cameras.filter((camera) =>
-    camera.name.toLowerCase().includes(searchCamera.toLowerCase())
-  );
+  console.log(cameras)
+  // const filteredCameras = cameras.filter((camera) =>
+  //   camera.camera_name.toLowerCase().includes(searchCamera.toLowerCase())
+  // );
 
   const [placeholderCount, setPlaceholderCount] = useState(16);
 
   useEffect(() => {
-    if (filteredCameras.length === 0) {
+    if (cameras.length === 0) {
       const updateCount = () => {
         const screenHeight = window.innerHeight;
         const screenWidth = window.innerWidth;
@@ -30,9 +31,9 @@ const CameraGrid = ({ cameras = [], onCameraClick, theme, searchCamera = '', col
       window.addEventListener('resize', updateCount);
       return () => window.removeEventListener('resize', updateCount);
     }
-  }, [filteredCameras.length, columns]);
+  }, [cameras.length, columns]);
 
-  const camerasToRender = filteredCameras.length > 0 ? filteredCameras : Array.from({ length: placeholderCount });
+  const camerasToRender = cameras.length > 0 ? cameras : Array.from({ length: placeholderCount });
 
   return (
     <motion.div
@@ -53,7 +54,7 @@ const CameraGrid = ({ cameras = [], onCameraClick, theme, searchCamera = '', col
       >
         {camerasToRender.map((camera, index) => (
           <motion.div
-            key={camera?.id || `placeholder-${index}`}
+            key={camera?.camera_id || `placeholder-${index}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: index * 0.05 }}

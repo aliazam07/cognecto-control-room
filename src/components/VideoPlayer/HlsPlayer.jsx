@@ -6,11 +6,14 @@ import {OverlayLoader, ErrorBox} from './Overlay';
 import SnapshotButton from "../SnapshotButton";
 import { useCameraStatus } from "../context/CameraStatusContext";
 
-const HlsPlayer = ({ url, cameraId }) => {
+const HlsPlayer = ({ cameraId }) => {
   const { setCameraOnlineStatus } = useCameraStatus();
   const videoRef = useRef(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
+  const url = `http://18.220.202.145/hls/${cameraId}.m3u8`
+  console.log(url)
 
   const updateStatus = useCallback((status) => {
     setCameraOnlineStatus(cameraId, status);
@@ -37,7 +40,9 @@ const HlsPlayer = ({ url, cameraId }) => {
     setLoading(false);
     updateStatus?.(false);
   };
-
+  if (cameraId === ""){
+    handleStreamError()
+  }
   if (Hls.isSupported()) {
     hls = new Hls({
       enableWorker: true,
