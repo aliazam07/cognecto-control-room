@@ -73,6 +73,7 @@ function Main() {
   const [selectedDistrict, setSelectedDistrict] = useState(null);
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [columnCount, setColumnCount] = useState(3);
+  const [gridSize, setGridSize] = useState(0);
 
   const [open, setOpen] = useState(false);
   const theme = useTheme();
@@ -122,26 +123,6 @@ function Main() {
 //         camera_name: "kdt-up40111-1324",
 //         url: "http://18.220.202.145/hls/kdt-up40111-1324.m3u8",
 //       },
-//       {
-//         camera_id: "kdt-up40111-reclaimer",
-//         camera_name: "kdt-up40111-reclaimer",
-//         url: "http://18.220.202.145/hls/kdt-up40111-hamm.m3u8",
-//       },
-//       {
-//         camera_id: "kdt-up4093-escort",
-//         camera_name: "kdt-up4093-escort",
-//         url: "http://18.220.202.145/hls/kdt-up40111-hamm.m3u8",
-//       },
-//       {
-//         camera_id: "kdt-up4093-ptr",
-//         camera_name: "kdt-up4093-ptr",
-//         url: "http://18.220.202.145/hls/kdt-up40111-hamm.m3u8",
-//       },
-//       {
-//         camera_id: "kdt-up40111-hamm",
-//         camera_name: "kdt-up40111-hamm",
-//         url: "http://18.220.202.145/hls/kdt-up40111-hamm.m3u8",
-//       }
 //     ]);
 //   } finally {
 //     setLoading(false); // Always stop loading here
@@ -169,29 +150,65 @@ useEffect(()=>{
     },
   });
 
-  const handleSiteClick = (cityId) => {
+  const handleSiteClick = (cityId,site) => {
     setSelectedCity(cityId);
     setExpandedSite((prev) => (prev === cityId ? null : cityId));
     setExpandedPackage(null);
     setExpandedRoad(null);
     setSelectedPlace(null);
+    setCameras([])
+
+    let count = 0;
+    const packages = site?.packages || {};
+
+    Object.values(packages).forEach(pkg => {
+      const roads = pkg?.roads || {};
+      Object.values(roads).forEach(road => {
+        const assets = road?.assets || {};
+        Object.values(assets).forEach(asset => {
+          const cameras = asset?.cameras || [];
+          count += cameras.length;
+        });
+      });
+    });
+    setGridSize(count)
   };
 
-  const handlePackageClick = (districtId) => {
+  const handlePackageClick = (districtId, packages) => {
     setSelectedDistrict(districtId);
     setExpandedPackage((prev) => (prev === districtId ? null : districtId));
     setExpandedRoad(null);
+    setCameras([])
+
+    let count = 0;
+    const roads = packages?.roads || {};
+
+    Object.values(roads).forEach(rod => {
+      const assets = rod?.assets || {};
+      Object.values(assets).forEach(ass => {
+        const cameras = ass?.cameras || [];
+          count += cameras.length;
+      });
+    });
+    setGridSize(count)
   };
 
-  const handleRoadClick = (placeId) => {
+  const handleRoadClick = (placeId,roads) => {
     const city = allData.find((city) => city.id === selectedCity);
     const district = city?.districts.find((d) => d.id === selectedDistrict);
     const place = district?.places.find((p) => p.id === placeId);
 
-    // if (place) {
-    //   setCameras(place.cameras);
-    // }
     setExpandedRoad((prev) => (prev === placeId ? null : placeId));
+    setCameras([])
+
+    let count = 0;
+    const assets = roads?.assets || {};
+
+    Object.values(assets).forEach(ass => {
+      const cameras = ass?.cameras || [];
+          count += cameras.length;
+    });
+    setGridSize(count)
   };
 
   const handlePlaceExpand = (CameraId) => {
@@ -451,7 +468,7 @@ useEffect(()=>{
                 >
                   <ListItem disablePadding>
                     <ListItemButton
-                      onClick={() => handleSiteClick(siteId)}
+                      onClick={() => handleSiteClick(siteId,site )}
                       sx={{ color: expandedSite === siteId ? "#1f60c0" : "" }}
                     >
                       <Box display="flex" alignItems="center" gap={1}>
@@ -518,7 +535,7 @@ useEffect(()=>{
                           <div key={packageId}>
                             <ListItem disablePadding>
                               <ListItemButton
-                                onClick={() => handlePackageClick(packageId)}
+                                onClick={() => handlePackageClick(packageId, pkg)}
                                 sx={{
                                   color:
                                     expandedPackage === packageId
@@ -586,7 +603,7 @@ useEffect(()=>{
                                       <ListItem disablePadding>
                                         <ListItemButton
                                           onClick={() =>
-                                            handleRoadClick(roadId)
+                                            handleRoadClick(roadId,road)
                                           }
                                           sx={{
                                             pl: 2,
@@ -755,6 +772,7 @@ useEffect(()=>{
                   onCameraClick={handleCameraClick}
                   theme={theme}
                   columns={columnCount}
+                  gridSize={gridSize}
                 />
               </Box>
             </Fade>
@@ -766,6 +784,7 @@ useEffect(()=>{
                 onCameraClick={handleCameraClick}
                 theme={theme}
                 columns={columnCount}
+                gridSize={gridSize}
               />
             </Box>
           )}

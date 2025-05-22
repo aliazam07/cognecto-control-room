@@ -6,34 +6,42 @@ import { Box, useTheme } from '@mui/material';
 const CARD_ASPECT_RATIO = 9 / 16; // height / width for 16:9
 const CARD_GAP = 16; // px gap between cards (same as `gap={4}` = 32px = 2rem)
 
-const CameraGrid = ({ cameras = [], onCameraClick, theme, searchCamera = '', columns = 4 }) => {
-  console.log(cameras)
+const CameraGrid = ({ cameras = [], onCameraClick, theme, searchCamera = '', columns = 4, gridSize }) => {
+  const [placeholderCount, setPlaceholderCount] = useState(0);
+  const [camerasToRender, setCamerasToRender] = useState([]);
+
+  // Calculate initial placeholder count based on screen size
+  useEffect(() => {
+    const updatePlaceholderCount = () => {
+      const screenHeight = window.innerHeight;
+      const screenWidth = window.innerWidth;
+      const containerWidth = screenWidth * 0.9;
+      const cardWidth = containerWidth / columns;
+      const cardHeight = cardWidth * CARD_ASPECT_RATIO;
+      const totalVerticalSpace = screenHeight - 100;
+      const rows = Math.floor(totalVerticalSpace / (cardHeight + CARD_GAP));
+      setPlaceholderCount(rows * columns);
+    };
+
+    updatePlaceholderCount();
+    window.addEventListener('resize', updatePlaceholderCount);
+    return () => window.removeEventListener('resize', updatePlaceholderCount);
+  }, [columns]);
+
+  // Update camerasToRender based on camera data or gridSize
+  useEffect(() => {
+    if (cameras.length > 0) {
+      setCamerasToRender(cameras);
+    } else if (gridSize > 0) {
+      setCamerasToRender(Array.from({ length: gridSize }));
+    } else {
+      setCamerasToRender(Array.from({ length: placeholderCount }));
+    }
+  }, [cameras, gridSize, placeholderCount]);
+
   // const filteredCameras = cameras.filter((camera) =>
   //   camera.camera_name.toLowerCase().includes(searchCamera.toLowerCase())
   // );
-
-  const [placeholderCount, setPlaceholderCount] = useState(16);
-
-  useEffect(() => {
-    if (cameras.length === 0) {
-      const updateCount = () => {
-        const screenHeight = window.innerHeight;
-        const screenWidth = window.innerWidth;
-        const containerWidth = screenWidth * 0.9; // approximate usable width
-        const cardWidth = containerWidth / columns;
-        const cardHeight = cardWidth * CARD_ASPECT_RATIO;
-        const totalVerticalSpace = screenHeight - 100; // subtract header or margin estimate
-        const rows = Math.floor(totalVerticalSpace / (cardHeight + CARD_GAP));
-        setPlaceholderCount(rows * columns);
-      };
-
-      updateCount();
-      window.addEventListener('resize', updateCount);
-      return () => window.removeEventListener('resize', updateCount);
-    }
-  }, [cameras.length, columns]);
-
-  const camerasToRender = cameras.length > 0 ? cameras : Array.from({ length: placeholderCount });
 
   return (
     <motion.div
