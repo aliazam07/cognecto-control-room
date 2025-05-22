@@ -13,8 +13,8 @@ export const data =
                 "asset_name": "BDI-UP6154-2990-PAD-FOOT-ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6152-3400-D",
+                    "camera_name": "bdi-up6152-3400-D",
                     "url": ""
                   }
                 ]
@@ -23,8 +23,8 @@ export const data =
                 "asset_name": "BDI-UP6154-3126-PTR-2",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6152-3406-D",
+                    "camera_name": "bdi-up6152-3406-D",
                     "url": ""
                   }
                 ]
@@ -33,8 +33,8 @@ export const data =
                 "asset_name": "BDI-UP6160-2881-CEMENT-SPREADER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6152-3407-D",
+                    "camera_name": "bdi-up6152-3407-D",
                     "url": ""
                   }
                 ]
@@ -43,8 +43,8 @@ export const data =
                 "asset_name": "BDI-UP6160-7112-SOIL-COMPACTOR",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6152-3408-D",
+                    "camera_name": "bdi-up6152-3408-D",
                     "url": ""
                   }
                 ]
@@ -58,8 +58,8 @@ export const data =
                 "asset_name": "BDI-UP6154-2990-PAD-FOOT-ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6152-3400-D",
+                    "camera_name": "bdi-up6152-3400-D",
                     "url": ""
                   }
                 ]
@@ -68,8 +68,8 @@ export const data =
                 "asset_name": "BDI-UP6154-3126-PTR-2",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6152-3406-D",
+                    "camera_name": "bdi-up6152-3406-D",
                     "url": ""
                   }
                 ]
@@ -78,8 +78,8 @@ export const data =
                 "asset_name": "BDI-UP6160-7112-SOIL-COMPACTOR",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6152-3408-D",
+                    "camera_name": "bdi-up6152-3408-D",
                     "url": ""
                   }
                 ]
@@ -98,8 +98,8 @@ export const data =
                 "asset_name": "BDI-UP6154-2990-PAD-FOOT-ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6157-3400-D",
+                    "camera_name": "bdi-up6157-3400-D",
                     "url": ""
                   }
                 ]
@@ -108,8 +108,8 @@ export const data =
                 "asset_name": "BDI-UP6154-2013-HAMM ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6157-3404-D",
+                    "camera_name": "bdi-up6157-3404-D",
                     "url": ""
                   }
                 ]
@@ -118,8 +118,8 @@ export const data =
                 "asset_name": "BDI-UP6154-WRT-RECLAIMER-2",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6157-3405-D",
+                    "camera_name": "bdi-up6157-3405-D",
                     "url": ""
                   }
                 ]
@@ -128,8 +128,8 @@ export const data =
                 "asset_name": "BDI-UP6154-3126-PTR-2",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6157-3406-D",
+                    "camera_name": "bdi-up6157-3406-D",
                     "url": ""
                   }
                 ]
@@ -138,8 +138,8 @@ export const data =
                 "asset_name": "BDI-UP6160-2881-CEMENT-SPREADER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6157-3407-D",
+                    "camera_name": "bdi-up6157-3407-D",
                     "url": ""
                   }
                 ]
@@ -148,8 +148,8 @@ export const data =
                 "asset_name": "BDI-UP6160-7112-SOIL-COMPACTOR",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6157-3408-D",
+                    "camera_name": "bdi-up6157-3408-D",
                     "url": ""
                   }
                 ]
@@ -158,8 +158,8 @@ export const data =
                 "asset_name": "BDI-UP6154-CHEMICAL-SPREADER-1",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6157-3572-D",
+                    "camera_name": "bdi-up6157-3572-D",
                     "url": ""
                   }
                 ]
@@ -178,8 +178,8 @@ export const data =
                 "asset_name": "BDI-UP6154-3126-PTR-2",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6156-3406-D",
+                    "camera_name": "bdi-up6156-3406-D",
                     "url": ""
                   }
                 ]
@@ -198,8 +198,8 @@ export const data =
                 "asset_name": "BDI-UP6154-3126-PTR-2",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6160-3406-D",
+                    "camera_name": "bdi-up6160-3406-D",
                     "url": ""
                   }
                 ]
@@ -208,8 +208,8 @@ export const data =
                 "asset_name": "BDI-UP6160-2881-CEMENT-SPREADER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6160-3407-D",
+                    "camera_name": "bdi-up6160-3407-D",
                     "url": ""
                   }
                 ]
@@ -218,8 +218,8 @@ export const data =
                 "asset_name": "BDI-UP6160-7112-SOIL-COMPACTOR",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6160-3408-D",
+                    "camera_name": "bdi-up6160-3408-D",
                     "url": ""
                   }
                 ]
@@ -228,8 +228,8 @@ export const data =
                 "asset_name": "BDI-UP6154-2990-PAD-FOOT-ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6160-3400-D",
+                    "camera_name": "bdi-up6160-3400-D",
                     "url": ""
                   }
                 ]
@@ -248,8 +248,8 @@ export const data =
                 "asset_name": "BDI-UP6154-CAT0468-MOTOR-GRADER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6162-3409-D",
+                    "camera_name": "bdi-up6162-3409-D",
                     "url": ""
                   }
                 ]
@@ -258,8 +258,8 @@ export const data =
                 "asset_name": "BDI-UP6154-CHEMICAL-SPREADER-1",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6162-3572-D",
+                    "camera_name": "bdi-up6162-3572-D",
                     "url": ""
                   }
                 ]
@@ -268,8 +268,8 @@ export const data =
                 "asset_name": "BDI-UP6154-WRT-RECLAIMER-2",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6162-3405-D",
+                    "camera_name": "bdi-up6162-3405-D",
                     "url": ""
                   }
                 ]
@@ -278,8 +278,8 @@ export const data =
                 "asset_name": "BDI-UP6154-UP71BT5437-CEMENT-SPREADER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6162-3574-D",
+                    "camera_name": "bdi-up6162-3574-D",
                     "url": ""
                   }
                 ]
@@ -298,8 +298,8 @@ export const data =
                 "asset_name": "BDI-UP6154-2990-PAD-FOOT-ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6154-3400-D",
+                    "camera_name": "bdi-up6154-3400-D",
                     "url": ""
                   }
                 ]
@@ -308,8 +308,8 @@ export const data =
                 "asset_name": "BDI-UP6154-2013-HAMM ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6154-3404-D",
+                    "camera_name": "bdi-up6154-3404-D",
                     "url": ""
                   }
                 ]
@@ -318,8 +318,8 @@ export const data =
                 "asset_name": "BDI-UP6154-WRT-RECLAIMER-2",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6154-3405-D",
+                    "camera_name": "bdi-up6154-3405-D",
                     "url": ""
                   }
                 ]
@@ -328,8 +328,8 @@ export const data =
                 "asset_name": "BDI-UP6154-3126-PTR-2",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6154-3406-D",
+                    "camera_name": "bdi-up6154-3406-D",
                     "url": ""
                   }
                 ]
@@ -338,8 +338,8 @@ export const data =
                 "asset_name": "BDI-UP6160-2881-CEMENT-SPREADER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6154-3407-D",
+                    "camera_name": "bdi-up6154-3407-D",
                     "url": ""
                   }
                 ]
@@ -348,8 +348,8 @@ export const data =
                 "asset_name": "BDI-UP6160-7112-SOIL-COMPACTOR",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6154-3408-D",
+                    "camera_name": "bdi-up6154-3408-D",
                     "url": ""
                   }
                 ]
@@ -358,8 +358,8 @@ export const data =
                 "asset_name": "BDI-UP6154-CAT0468-MOTOR-GRADER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6154-3409-D",
+                    "camera_name": "bdi-up6154-3409-D",
                     "url": ""
                   }
                 ]
@@ -368,8 +368,8 @@ export const data =
                 "asset_name": "BDI-UP6154-CHEMICAL-SPREADER-1",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6154-3572-D",
+                    "camera_name": "bdi-up6154-3572-D",
                     "url": ""
                   }
                 ]
@@ -378,8 +378,8 @@ export const data =
                 "asset_name": "BDI-UP6154-UP71BT5437-CEMENT-SPREADER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "bdi-up6154-3574-D",
+                    "camera_name": "bdi-up6154-3574-D",
                     "url": ""
                   }
                 ]
@@ -413,8 +413,8 @@ export const data =
                 "asset_name": "KDT-UP40112-PTR",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "kdt-up40111-3576-D",
+                    "camera_name": "kdt-up40111-3576-D",
                     "url": ""
                   }
                 ]
@@ -423,8 +423,8 @@ export const data =
                 "asset_name": "KDT-UP40112-PAD-FOOT-ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "kdt-up40111-3586-D",
+                    "camera_name": "kdt-up40111-3586-D",
                     "url": ""
                   }
                 ]
@@ -433,8 +433,8 @@ export const data =
                 "asset_name": "KDT-UP40112-2381-CEMENT-SPREADER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "kdt-up40111-3589-D",
+                    "camera_name": "kdt-up40111-3589-D",
                     "url": ""
                   }
                 ]
@@ -453,8 +453,8 @@ export const data =
                 "asset_name": "KDT-UP40112-PTR",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "kdt-up40112-3576-D",
+                    "camera_name": "kdt-up40112-3576-D",
                     "url": ""
                   }
                 ]
@@ -463,8 +463,8 @@ export const data =
                 "asset_name": "KDT-UP40112-PAD-FOOT-ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "kdt-up40112-3586-D",
+                    "camera_name": "kdt-up40112-3586-D",
                     "url": ""
                   }
                 ]
@@ -473,8 +473,8 @@ export const data =
                 "asset_name": "KDT-UP40112-HAMM-ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "kdt-up40112-3587-D",
+                    "camera_name": "kdt-up40112-3587-D",
                     "url": ""
                   }
                 ]
@@ -533,8 +533,8 @@ export const data =
                 "asset_name": "KDT- UP40110- UP 80 FT 2750- ESCORTS SC",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "kdt-up4093-3629-D",
+                    "camera_name": "kdt-up4093-3629-D",
                     "url": ""
                   }
                 ]
@@ -543,8 +543,8 @@ export const data =
                 "asset_name": "KDT-UP4093-PAD-FOOT-ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "kdt-up4093-3627-D",
+                    "camera_name": "kdt-up4093-3627-D",
                     "url": ""
                   }
                 ]
@@ -553,8 +553,8 @@ export const data =
                 "asset_name": "KDT-UP40112-1324-CEMENT-SPREADER-2",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "kdt-up4093-3590-D",
+                    "camera_name": "kdt-up4093-3590-D",
                     "url": ""
                   }
                 ]
@@ -563,8 +563,8 @@ export const data =
                 "asset_name": "KDT-UP4093-UP80FT9818-MOTOR-GRADER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "kdt-up4093-3649-D",
+                    "camera_name": "kdt-up4093-3649-D",
                     "url": ""
                   }
                 ]
@@ -573,8 +573,8 @@ export const data =
                 "asset_name": "KDT-UP40112-UP70LT5076-CEMENT-SPREADER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "kdt-up4093-3650-D",
+                    "camera_name": "kdt-up4093-3650-D",
                     "url": ""
                   }
                 ]
@@ -593,8 +593,8 @@ export const data =
                 "asset_name": "KDT- UP40110- UP 80 FT 2750- ESCORTS SC",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "kdt-up40110-3629-D",
+                    "camera_name": "kdt-up40110-3629-D",
                     "url": ""
                   }
                 ]
@@ -618,8 +618,8 @@ export const data =
                 "asset_name": "DRA-UP20144-E00368-PAD-FOOT-ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "dra-up20144-3664-D",
+                    "camera_name": "dra-up20144-3664-D",
                     "url": ""
                   }
                 ]
@@ -628,8 +628,8 @@ export const data =
                 "asset_name": "DRA-UP20144-2671-SOIL-COMPACTOR",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "dra-up20144-3665-D",
+                    "camera_name": "dra-up20144-3665-D",
                     "url": ""
                   }
                 ]
@@ -638,8 +638,8 @@ export const data =
                 "asset_name": "DRA-UP20144-UP70MT7937-CEMENT-SPREADER",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "dra-up20144-3641-D",
+                    "camera_name": "dra-up20144-3641-D",
                     "url": ""
                   }
                 ]
@@ -648,8 +648,8 @@ export const data =
                 "asset_name": "DRA-UP20144-PTR",
                 "cameras": [
                   {
-                    "camera_id": "",
-                    "camera_name": "",
+                    "camera_id": "dra-up20144-3693-D",
+                    "camera_name": "dra-up20144-3693-D",
                     "url": ""
                   }
                 ]
@@ -661,4 +661,3 @@ export const data =
     }
   }
 }
-
