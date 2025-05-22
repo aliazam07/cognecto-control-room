@@ -179,13 +179,14 @@ useEffect(()=>{
 };
 
 
-  const handlePackageClick = (districtId, packages) => {
+  const handlePackageClick = (districtId, singlePackage) => {
   setSelectedDistrict(districtId);
   setExpandedPackage((prev) => (prev === districtId ? null : districtId));
   setExpandedRoad(null);
+  setSelectedPlace(null); // important to reset
 
   let cameraList = [];
-  const roads = packages?.roads || {};
+  const roads = singlePackage?.roads || {}; // now you know this is one package
 
   Object.values(roads).forEach(road => {
     const assets = road?.assets || {};
@@ -204,11 +205,8 @@ useEffect(()=>{
 
 
   const handleRoadClick = (placeId, roads) => {
-  const city = allData.find((city) => city.id === selectedCity);
-  const district = city?.districts.find((d) => d.id === selectedDistrict);
-  const place = district?.places.find((p) => p.id === placeId);
-
   setExpandedRoad((prev) => (prev === placeId ? null : placeId));
+  setSelectedPlace(placeId); // add this
 
   let cameraList = [];
   const assets = roads?.assets || {};
@@ -246,7 +244,7 @@ useEffect(()=>{
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
   };
-  console.log(cameras)
+  console.log("Camera list length:", cameras.length, cameras);
   return (
     <>
       <CssBaseline />
@@ -300,7 +298,7 @@ useEffect(()=>{
               Cognecto
             </Typography>
           </Box>
-          {!isMobile && <Divider orientation="vertical" flexItem />}
+          {/* {!isMobile && <Divider orientation="vertical" flexItem />} */}
           {!isMobile && (
             <Box
               sx={{
@@ -308,12 +306,12 @@ useEffect(()=>{
                 alignItems: "center",
                 gap: 1,
                 justifyContent: "space-between",
-                flexGrow: 1,
+                // flexGrow: 1,
               }}
             >
               {/* Center Section (Live Streaming) - Hidden on mobile */}
 
-              <Box
+              {/* <Box
                 sx={{ display: "flex", alignItems: "center", gap: 1, ml: 2 }}
               >
                 <svg
@@ -338,7 +336,7 @@ useEffect(()=>{
                 >
                   Live Streaming
                 </Typography>
-              </Box>
+              </Box> */}
 
               {/* Right Section (Grid Switcher or Hamburger) */}
               <Box sx={{ display: "flex", alignItems: "center" }}>
