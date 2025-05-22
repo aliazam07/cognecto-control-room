@@ -30,6 +30,7 @@ export const ErrorBox = () => (
       justifyContent: "center",
       alignItems: "center",
       height: "100%",
+      width: "100%",
       aspectRatio: '16 / 9',
       color: "#696969",
       bgcolor: "#f5f5f5",
