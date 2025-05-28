@@ -12,7 +12,8 @@ const HlsPlayer = ({ cameraId }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  const url = `http://18.220.202.145/hls/${cameraId}.m3u8`
+  // const url = `http://18.220.202.145/hls/${cameraId}.m3u8`
+  const url = `https://your-app.vercel.app/api/stream?cameraId=${cameraId}`;
   // console.log(url)
 
   const updateStatus = useCallback((status) => {
