@@ -56,10 +56,10 @@ const HlsPlayer = ({ cameraId }) => {
     hls.attachMedia(video);
 
     hls.on(Hls.Events.MANIFEST_PARSED, () => {
-      // hls.currentLevel = 0;
-      // hls.loadLevel = 0;
-      // hls.nextLevel = 0;
-      hls.startLevel = 0;
+      hls.currentLevel = 0;
+      hls.loadLevel = 0;
+      hls.nextLevel = 0;
+      // hls.startLevel = 0;
 
       console.log('Available Quality Levels:', hls.levels.map((l, i) => ({
         index: i,
