@@ -13,7 +13,7 @@ const HlsPlayer = ({ cameraId }) => {
   const [error, setError] = useState(false);
 
   // const url = `http://18.220.202.145/hls/${cameraId}.m3u8`
-  const url = `https://video-proxy.up.railway.app/stream/${cameraId}`;
+  const url = `https://video-proxy-server-production.up.railway.app/stream/${cameraId}`;
   // console.log(url)
 
   const updateStatus = useCallback((status) => {
