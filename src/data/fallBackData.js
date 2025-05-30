@@ -618,7 +618,8 @@ export const data =
                 "asset_name": "DRA-UP20144-E00368-PAD-FOOT-ROLLER",
                 "cameras": [
                   {
-                    "camera_id": "DRA-UP20144-E00368-PAD-D",
+                    // "camera_id": "DRA-UP20144-E00368-PAD-D",
+                       "camera_id": "dra-up210144-8083grader",
                     "camera_name": "DRA-UP20144-E00368-PAD-D",
                     "url": ""
                   }
